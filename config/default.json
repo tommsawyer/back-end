@@ -1,0 +1,19 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/ivanovofood",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "O2u18v3u7FinFBQkRwuf6IDOgxLWzyjP6PyddOUqyob/X9v9/xwEzbAPprjVcTrUQktVZYiQ9C8B8C5AmexD+Q=="
+    },
+    "local": {},
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "permissions": {
+        "scope": ["profile"]
+      }
+    }
+  }
+}
