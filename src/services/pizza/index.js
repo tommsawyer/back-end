@@ -9,6 +9,10 @@ module.exports = function() {
 
   const options = {
     Model: pizza,
+    paginate: {
+      default: 25,
+      max: 50
+    }
   };
 
   // Initialize our service with any options it requires
