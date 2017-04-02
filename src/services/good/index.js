@@ -1,25 +1,29 @@
 'use strict';
 
 const service = require('feathers-mongoose');
-const salad = require('./salad-model');
+const good = require('./good-model');
 const hooks = require('./hooks');
 
 module.exports = function() {
   const app = this;
 
   const options = {
-    Model: salad,
+    Model: good,
+    paginate: {
+      default: 25,
+      max: 100
+    }
   };
 
   // Initialize our service with any options it requires
-  app.use('/salads', service(options));
+  app.use('/goods', service(options));
 
   // Get our initialize service to that we can bind hooks
-  const saladService = app.service('/salads');
+  const goodService = app.service('/goods');
 
   // Set up our before hooks
-  saladService.before(hooks.before);
+  goodService.before(hooks.before);
 
   // Set up our after hooks
-  saladService.after(hooks.after);
+  goodService.after(hooks.after);
 };
